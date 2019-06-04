@@ -1,0 +1,241 @@
+html
+{
+	scroll-behavior: smooth;
+}
+
+
+ body 
+ {
+    background-color: #FFF5EF;
+ }
+
+
+section 
+{
+    text-align: center;
+}
+
+nav 
+{
+   margin-top: -40px; 
+}
+
+nav.top 
+{
+    margin-top: 0px;
+    transition-duration: 2s;
+}
+
+
+.nav 
+{
+    background-color: #F8F8F8;
+    border-color: #E7E7E7;
+}
+
+
+.nav .flex-sm-fill 
+{
+    color: #888;
+}
+
+
+.nav .flex-sm-fill:hover,
+.nav .flex-sm-fill:focus 
+{
+    color: #C1C0BE;
+}
+
+
+.fleche 
+{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 50px;  
+    margin-top: 50px;  
+}
+
+
+#up
+{
+    padding-bottom: 30px;
+}
+
+
+
+.flechehaut
+{
+    width: 45px;
+    height: 45px;
+}
+
+
+.fleche:hover 
+{ 
+    transform: rotate(360deg);  
+    transition: all 1s;
+}
+
+
+.flechehaut:hover 
+{ 
+    transform: rotate(360deg);  
+    transition: all 1s;
+}
+
+
+.zoom
+{
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+
+.zoom:hover 
+{
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+}
+
+p 
+{
+    text-align: center;
+	font-size: 1,7em;
+	font-family: 'Montserrat', sans-serif;
+    padding-bottom: 10px;
+    padding-top: 20px;
+	
+}
+
+ul
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1,7em;
+    text-align: center;
+}
+
+h1, h2, h3 
+{
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 
+{
+	font-size: 6em;
+	text-shadow: 0px 10px 5px rgba(0,0,0,0.2),
+                 10px 15px 5px rgba(0,0,0,0.05),
+                 -10px 15px 5px rgba(0,0,0,0.05);
+    padding: 50px;
+    padding-bottom: 80px;
+}
+
+h2 
+{
+    font-size: 2em;
+    padding: 30px;
+}
+
+
+#tete 
+{
+	width: 200px;
+	height: 200px;
+	text-align: : center;
+	border-radius: 50%;
+	margin: 30px;
+}
+
+
+#conteneur 
+{
+    display: flex;
+    justify-content: space-around;
+    margin: 50px;
+    flex-wrap: wrap;
+}
+
+
+#conteneur2 
+{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+
+#apropos
+{
+    padding-bottom: 50px;
+}
+
+
+#Experiences
+{
+    padding-bottom: 100px;
+}
+
+
+#compétence
+{
+    padding-right: 250px;
+    margin: 30px;
+}
+
+
+#expérience
+{
+    padding-left: 50px;
+}
+
+
+.form-group
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    margin-top: 30px;
+}
+
+
+textarea 
+{
+    padding-bottom: 100px;
+}
+
+@media screen and (max-width: 1300px) {
+
+
+#conteneur2 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#compétence 
+{
+    padding-right: 0;
+    margin: 30px;
+}
+
+
+}
+
+
+@media screen and (max-width: 500px) {
+
+
+.form-group
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    margin-top: 30px;
+}
+
+
+}

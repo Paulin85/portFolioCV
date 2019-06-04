@@ -1,0 +1,186 @@
+html
+{
+	scroll-behavior: smooth;
+}
+
+
+section 
+{
+    text-align: center;
+}
+
+nav 
+{
+   margin-top: -40px; 
+}
+
+nav.top 
+{
+    margin-top: 0px;
+    transition-duration: 2s;
+}
+
+
+.nav 
+{
+    background-color: #F8F8F8;
+    border-color: #E7E7E7;
+}
+
+
+.nav .flex-sm-fill 
+{
+    color: #888;
+}
+
+
+.nav .flex-sm-fill:hover,
+.nav .flex-sm-fill:focus 
+{
+    color: #C1C0BE;
+}
+
+
+.fleche 
+{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 90px;
+    margin-top: 30px;   
+}
+
+
+.flechehaut
+{
+    width: 45px;
+    height: 45px;
+    margin-bottom: 70px;
+}
+
+
+.fleche:hover 
+{ 
+    transform: rotate(360deg);  
+    transition: all 1s;
+}
+
+
+.flechehaut:hover 
+{ 
+    transform: rotate(360deg);  
+    transition: all 1s;
+}
+
+
+h1, h2, h3 
+{
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+h2 
+{
+    font-size: 2em;
+}
+
+
+#conteneur 
+{
+    display: flex;
+    justify-content: space-around;
+    margin: 60px;
+    flex-wrap: wrap;
+}
+
+
+#apropos
+{
+    padding: 60px;
+}
+
+
+#Experiences
+{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+#Competences
+{
+     padding-top: 50px;
+    padding-bottom: 60px;
+
+}
+
+#competence
+{
+   padding-bottom: 80px; 
+}
+
+
+#Presentationsimple
+{
+    padding: 80px;
+}
+
+
+
+#projet
+{
+    padding-bottom: 80px;
+    padding-top: 60px;
+}
+
+#contacts
+{
+    padding-top: 50px;   
+}
+
+#tableau
+{
+     padding: 150px;    
+}
+
+
+.form-group
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    padding: 15px;
+}
+
+
+textarea 
+{
+    padding-bottom: 100px;
+}
+
+@media screen and (max-width: 1300px) {
+
+
+
+
+#compétence 
+{
+    padding-right: 0;
+    margin: 30px;
+}
+
+
+}
+
+
+@media screen and (max-width: 500px) {
+
+
+.form-group
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    margin-top: 30px;
+}
+
+
+}

@@ -1,0 +1,47 @@
+﻿CREATE TABLE admin.presentationsimple (
+    id_presentationsimple integer NOT NULL,
+    message_presentationsimple character varying(30),
+    photochemin_presentationsimple character varying(100)
+);
+
+
+CREATE TABLE admin.presentationdet (
+    id_presentationdet integer NOT NULL,
+    diplome_presentationdet character varying(30),
+    ecole_presentationdet character varying(40),
+    loisir_presentationdet character varying(25)
+);
+
+
+CREATE TABLE admin.experiences (
+    id_parcours integer NOT NULL,
+    name_parcours character varying(50),
+    nomtravail_parcours character varying(20),
+    temps_parcours character varying(2),
+    datefintravail_parcours date
+);
+
+CREATE TABLE admin.competences (
+    id_competences integer NOT NULL,
+    nom_competences character varying(15),
+    niveau_competences integer NOT NULL
+);
+
+CREATE TABLE admin.projets (
+    id_projets integer NOT NULL,
+    numéro_projets character varying(25),
+    explication_projets character varying(1000)
+);
+
+
+CREATE TABLE admin.message (
+    id_message integer NOT NULL,
+    numero_message integer NOT NULL,
+    nom_message character varying(30),
+    mail_message character varying(40),
+    texte_message text
+);
+
+
+INSERT INTO admin.competences (id_competences, nom_competences, niveau_competences)
+ 	VALUES (1,'HTML/CSS', '4', );

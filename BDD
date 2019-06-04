@@ -1,0 +1,507 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 11.1
+-- Dumped by pg_dump version 11.1
+
+-- Started on 2019-06-03 18:42:27
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- TOC entry 8 (class 2615 OID 16516)
+-- Name: admin; Type: SCHEMA; Schema: -; Owner: postgres
+--
+
+CREATE SCHEMA admin;
+
+
+ALTER SCHEMA admin OWNER TO postgres;
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- TOC entry 200 (class 1259 OID 16526)
+-- Name: competences; Type: TABLE; Schema: admin; Owner: postgres
+--
+
+CREATE TABLE admin.competences (
+    nom_competences character varying(15),
+    niveau_competences integer NOT NULL,
+    id integer NOT NULL
+);
+
+
+ALTER TABLE admin.competences OWNER TO postgres;
+
+--
+-- TOC entry 207 (class 1259 OID 16621)
+-- Name: competences_id_seq; Type: SEQUENCE; Schema: admin; Owner: postgres
+--
+
+CREATE SEQUENCE admin.competences_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE admin.competences_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 2874 (class 0 OID 0)
+-- Dependencies: 207
+-- Name: competences_id_seq; Type: SEQUENCE OWNED BY; Schema: admin; Owner: postgres
+--
+
+ALTER SEQUENCE admin.competences_id_seq OWNED BY admin.competences.id;
+
+
+--
+-- TOC entry 199 (class 1259 OID 16523)
+-- Name: experiences; Type: TABLE; Schema: admin; Owner: postgres
+--
+
+CREATE TABLE admin.experiences (
+    name_parcours character varying(50),
+    nomtravail_parcours character varying(20),
+    temps_parcours character varying(2),
+    id integer NOT NULL
+);
+
+
+ALTER TABLE admin.experiences OWNER TO postgres;
+
+--
+-- TOC entry 206 (class 1259 OID 16612)
+-- Name: experiences_id_seq; Type: SEQUENCE; Schema: admin; Owner: postgres
+--
+
+CREATE SEQUENCE admin.experiences_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE admin.experiences_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 2875 (class 0 OID 0)
+-- Dependencies: 206
+-- Name: experiences_id_seq; Type: SEQUENCE OWNED BY; Schema: admin; Owner: postgres
+--
+
+ALTER SEQUENCE admin.experiences_id_seq OWNED BY admin.experiences.id;
+
+
+--
+-- TOC entry 202 (class 1259 OID 16532)
+-- Name: message; Type: TABLE; Schema: admin; Owner: postgres
+--
+
+CREATE TABLE admin.message (
+    nom_message character varying(30),
+    mail_message character varying(40),
+    texte_message text,
+    sujet_message character varying(50),
+    id integer NOT NULL
+);
+
+
+ALTER TABLE admin.message OWNER TO postgres;
+
+--
+-- TOC entry 205 (class 1259 OID 16600)
+-- Name: message_id_seq; Type: SEQUENCE; Schema: admin; Owner: postgres
+--
+
+CREATE SEQUENCE admin.message_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE admin.message_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 2876 (class 0 OID 0)
+-- Dependencies: 205
+-- Name: message_id_seq; Type: SEQUENCE OWNED BY; Schema: admin; Owner: postgres
+--
+
+ALTER SEQUENCE admin.message_id_seq OWNED BY admin.message.id;
+
+
+--
+-- TOC entry 198 (class 1259 OID 16520)
+-- Name: presentationdet; Type: TABLE; Schema: admin; Owner: postgres
+--
+
+CREATE TABLE admin.presentationdet (
+    diplome_presentationdet character varying(30),
+    ecole_presentationdet character varying(40),
+    loisir_presentationdet character varying(30),
+    id integer NOT NULL
+);
+
+
+ALTER TABLE admin.presentationdet OWNER TO postgres;
+
+--
+-- TOC entry 204 (class 1259 OID 16591)
+-- Name: presentationdet_id_seq; Type: SEQUENCE; Schema: admin; Owner: postgres
+--
+
+CREATE SEQUENCE admin.presentationdet_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE admin.presentationdet_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 2877 (class 0 OID 0)
+-- Dependencies: 204
+-- Name: presentationdet_id_seq; Type: SEQUENCE OWNED BY; Schema: admin; Owner: postgres
+--
+
+ALTER SEQUENCE admin.presentationdet_id_seq OWNED BY admin.presentationdet.id;
+
+
+--
+-- TOC entry 197 (class 1259 OID 16517)
+-- Name: presentationsimple; Type: TABLE; Schema: admin; Owner: postgres
+--
+
+CREATE TABLE admin.presentationsimple (
+    message_presentationsimple character varying(300),
+    photochemin_presentationsimple character varying(100),
+    id integer NOT NULL
+);
+
+
+ALTER TABLE admin.presentationsimple OWNER TO postgres;
+
+--
+-- TOC entry 203 (class 1259 OID 16582)
+-- Name: presentationsimple_id_seq; Type: SEQUENCE; Schema: admin; Owner: postgres
+--
+
+CREATE SEQUENCE admin.presentationsimple_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE admin.presentationsimple_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 2878 (class 0 OID 0)
+-- Dependencies: 203
+-- Name: presentationsimple_id_seq; Type: SEQUENCE OWNED BY; Schema: admin; Owner: postgres
+--
+
+ALTER SEQUENCE admin.presentationsimple_id_seq OWNED BY admin.presentationsimple.id;
+
+
+--
+-- TOC entry 201 (class 1259 OID 16529)
+-- Name: projets; Type: TABLE; Schema: admin; Owner: postgres
+--
+
+CREATE TABLE admin.projets (
+    numero_projets character varying(2),
+    explication_projets character varying(1000),
+    id integer NOT NULL
+);
+
+
+ALTER TABLE admin.projets OWNER TO postgres;
+
+--
+-- TOC entry 208 (class 1259 OID 16630)
+-- Name: projets_id_seq; Type: SEQUENCE; Schema: admin; Owner: postgres
+--
+
+CREATE SEQUENCE admin.projets_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE admin.projets_id_seq OWNER TO postgres;
+
+--
+-- TOC entry 2879 (class 0 OID 0)
+-- Dependencies: 208
+-- Name: projets_id_seq; Type: SEQUENCE OWNED BY; Schema: admin; Owner: postgres
+--
+
+ALTER SEQUENCE admin.projets_id_seq OWNED BY admin.projets.id;
+
+
+--
+-- TOC entry 2721 (class 2604 OID 16623)
+-- Name: competences id; Type: DEFAULT; Schema: admin; Owner: postgres
+--
+
+ALTER TABLE ONLY admin.competences ALTER COLUMN id SET DEFAULT nextval('admin.competences_id_seq'::regclass);
+
+
+--
+-- TOC entry 2720 (class 2604 OID 16614)
+-- Name: experiences id; Type: DEFAULT; Schema: admin; Owner: postgres
+--
+
+ALTER TABLE ONLY admin.experiences ALTER COLUMN id SET DEFAULT nextval('admin.experiences_id_seq'::regclass);
+
+
+--
+-- TOC entry 2723 (class 2604 OID 16602)
+-- Name: message id; Type: DEFAULT; Schema: admin; Owner: postgres
+--
+
+ALTER TABLE ONLY admin.message ALTER COLUMN id SET DEFAULT nextval('admin.message_id_seq'::regclass);
+
+
+--
+-- TOC entry 2719 (class 2604 OID 16593)
+-- Name: presentationdet id; Type: DEFAULT; Schema: admin; Owner: postgres
+--
+
+ALTER TABLE ONLY admin.presentationdet ALTER COLUMN id SET DEFAULT nextval('admin.presentationdet_id_seq'::regclass);
+
+
+--
+-- TOC entry 2718 (class 2604 OID 16584)
+-- Name: presentationsimple id; Type: DEFAULT; Schema: admin; Owner: postgres
+--
+
+ALTER TABLE ONLY admin.presentationsimple ALTER COLUMN id SET DEFAULT nextval('admin.presentationsimple_id_seq'::regclass);
+
+
+--
+-- TOC entry 2722 (class 2604 OID 16632)
+-- Name: projets id; Type: DEFAULT; Schema: admin; Owner: postgres
+--
+
+ALTER TABLE ONLY admin.projets ALTER COLUMN id SET DEFAULT nextval('admin.projets_id_seq'::regclass);
+
+
+--
+-- TOC entry 2860 (class 0 OID 16526)
+-- Dependencies: 200
+-- Data for Name: competences; Type: TABLE DATA; Schema: admin; Owner: postgres
+--
+
+COPY admin.competences (nom_competences, niveau_competences, id) FROM stdin;
+HTML / CSS	4	1
+JavaScript	3	2
+PHP	3	3
+CCNA 1	4	4
+Python	3	5
+\.
+
+
+--
+-- TOC entry 2859 (class 0 OID 16523)
+-- Dependencies: 199
+-- Data for Name: experiences; Type: TABLE DATA; Schema: admin; Owner: postgres
+--
+
+COPY admin.experiences (name_parcours, nomtravail_parcours, temps_parcours, id) FROM stdin;
+Super U	Mise en rayon	8	1
+Vendée Crustacés	Ostréiculteur	4	2
+\.
+
+
+--
+-- TOC entry 2862 (class 0 OID 16532)
+-- Dependencies: 202
+-- Data for Name: message; Type: TABLE DATA; Schema: admin; Owner: postgres
+--
+
+COPY admin.message (nom_message, mail_message, texte_message, sujet_message, id) FROM stdin;
+Paulin	paulinsirot@gmail.com	Nouvelles compétences à rajouter	Compétences	1
+\.
+
+
+--
+-- TOC entry 2858 (class 0 OID 16520)
+-- Dependencies: 198
+-- Data for Name: presentationdet; Type: TABLE DATA; Schema: admin; Owner: postgres
+--
+
+COPY admin.presentationdet (diplome_presentationdet, ecole_presentationdet, loisir_presentationdet, id) FROM stdin;
+Bac Scientifique	Sainte Marie Du Port	L'informatique	1
+Bachelor Ingesup	Ynov Campus	Le Sport (Basket)	2
+\.
+
+
+--
+-- TOC entry 2857 (class 0 OID 16517)
+-- Dependencies: 197
+-- Data for Name: presentationsimple; Type: TABLE DATA; Schema: admin; Owner: postgres
+--
+
+COPY admin.presentationsimple (message_presentationsimple, photochemin_presentationsimple, id) FROM stdin;
+Je suis un étudiant en informatique à Ynov et vous êtes sur mon PortFolio. \nSi vous voulez en apprendre un peu plus sur moi, cliquez sur la flèche juste en dessous !	face.jpg	1
+\.
+
+
+--
+-- TOC entry 2861 (class 0 OID 16529)
+-- Dependencies: 201
+-- Data for Name: projets; Type: TABLE DATA; Schema: admin; Owner: postgres
+--
+
+COPY admin.projets (numero_projets, explication_projets, id) FROM stdin;
+1	Le projet Web, qui consiste à réaliser un PortFolio manageable, est un projet qui nous a permis de développer nos compétences en HTML/CSS, PHP, JavaScript et PostGreSQL.\n	1
+2	Nous avons aussi réaliser un projet logciel, objet connecté nommé Plante Connectée.\nPour mener à bien ce projet, il a fallu construire un objet connecté qui devait envoyer la température, l'humidité du sol et la luminosité du lieu.\nToute ces informations sont stockées dans une base de données et envoyer à l'utilisateur pour qu'il puisse faire pousser ses plantes convenablement.\nCe projet nous a permis de travailler sur une carte Arduino, RaspBerry, les langages Python et C et PostGreSQL.	2
+3	Le projet Inventaire + est un projet tourné réseau. Nous étions dans le rôle d'une entreprise qui devait réaliser une infrastructure réseau tout en faisant attention à ce qu'elle soit bien sécurisée et optimisée. Ce projet nous a permis d'en apprendre plus sur le réseau, CCNA 1.	3
+\.
+
+
+--
+-- TOC entry 2880 (class 0 OID 0)
+-- Dependencies: 207
+-- Name: competences_id_seq; Type: SEQUENCE SET; Schema: admin; Owner: postgres
+--
+
+SELECT pg_catalog.setval('admin.competences_id_seq', 5, true);
+
+
+--
+-- TOC entry 2881 (class 0 OID 0)
+-- Dependencies: 206
+-- Name: experiences_id_seq; Type: SEQUENCE SET; Schema: admin; Owner: postgres
+--
+
+SELECT pg_catalog.setval('admin.experiences_id_seq', 2, true);
+
+
+--
+-- TOC entry 2882 (class 0 OID 0)
+-- Dependencies: 205
+-- Name: message_id_seq; Type: SEQUENCE SET; Schema: admin; Owner: postgres
+--
+
+SELECT pg_catalog.setval('admin.message_id_seq', 1, true);
+
+
+--
+-- TOC entry 2883 (class 0 OID 0)
+-- Dependencies: 204
+-- Name: presentationdet_id_seq; Type: SEQUENCE SET; Schema: admin; Owner: postgres
+--
+
+SELECT pg_catalog.setval('admin.presentationdet_id_seq', 2, true);
+
+
+--
+-- TOC entry 2884 (class 0 OID 0)
+-- Dependencies: 203
+-- Name: presentationsimple_id_seq; Type: SEQUENCE SET; Schema: admin; Owner: postgres
+--
+
+SELECT pg_catalog.setval('admin.presentationsimple_id_seq', 6, true);
+
+
+--
+-- TOC entry 2885 (class 0 OID 0)
+-- Dependencies: 208
+-- Name: projets_id_seq; Type: SEQUENCE SET; Schema: admin; Owner: postgres
+--
+
+SELECT pg_catalog.setval('admin.projets_id_seq', 3, true);
+
+
+--
+-- TOC entry 2731 (class 2606 OID 16625)
+-- Name: competences competences_pkey; Type: CONSTRAINT; Schema: admin; Owner: postgres
+--
+
+ALTER TABLE ONLY admin.competences
+    ADD CONSTRAINT competences_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2729 (class 2606 OID 16616)
+-- Name: experiences experiences_pkey; Type: CONSTRAINT; Schema: admin; Owner: postgres
+--
+
+ALTER TABLE ONLY admin.experiences
+    ADD CONSTRAINT experiences_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2735 (class 2606 OID 16604)
+-- Name: message message_pkey; Type: CONSTRAINT; Schema: admin; Owner: postgres
+--
+
+ALTER TABLE ONLY admin.message
+    ADD CONSTRAINT message_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2727 (class 2606 OID 16595)
+-- Name: presentationdet presentationdet_pkey; Type: CONSTRAINT; Schema: admin; Owner: postgres
+--
+
+ALTER TABLE ONLY admin.presentationdet
+    ADD CONSTRAINT presentationdet_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2725 (class 2606 OID 16586)
+-- Name: presentationsimple presentationsimple_pkey; Type: CONSTRAINT; Schema: admin; Owner: postgres
+--
+
+ALTER TABLE ONLY admin.presentationsimple
+    ADD CONSTRAINT presentationsimple_pkey PRIMARY KEY (id);
+
+
+--
+-- TOC entry 2733 (class 2606 OID 16634)
+-- Name: projets projets_pkey; Type: CONSTRAINT; Schema: admin; Owner: postgres
+--
+
+ALTER TABLE ONLY admin.projets
+    ADD CONSTRAINT projets_pkey PRIMARY KEY (id);
+
+
+-- Completed on 2019-06-03 18:42:28
+
+--
+-- PostgreSQL database dump complete
+--
+
